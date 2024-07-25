@@ -118,7 +118,7 @@ void setup(void) {
   server.begin();
   Serial.println("HTTP server started");
   dht.begin();
-  lcd.begin();
+  lcd.init();
   lcd.display();    //เปิดหน้าจอ
   lcd.backlight();  //เปิดไฟ backlight
   lcd.clear();      //ล้างหน้าจอ
