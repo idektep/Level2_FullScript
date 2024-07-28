@@ -66,6 +66,9 @@ bool auto_move = false;
 #define R_ENA 2   // Adjust speed //motor3
 #define R_ENB 15  // Adjust speed //motor4
 
+#define L_LED 17
+#define R_LED 16
+
 #define FORWARD 1
 #define BACKWARD -1
 
@@ -108,6 +111,8 @@ void setup(void) {
   Serial.begin(115200);
   pinMode(TrigPin, OUTPUT);
   pinMode(EchoPin, INPUT);
+  pinMode(L_LED, OUTPUT);
+  pinMode(R_LED, OUTPUT);
   initWiFi();
   Serial.print("RRSI: ");
   Serial.println(WiFi.RSSI());
