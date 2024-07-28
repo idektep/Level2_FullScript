@@ -109,6 +109,8 @@ void processAGVMovement(String inputValue) {
       rotateMotor(BACK_RIGHT_MOTOR, STOP);
       break;
     default:
+      digitalWrite(L_LED, LOW);
+      digitalWrite(R_LED, LOW);
       rotateMotor(FRONT_LEFT_MOTOR, STOP);
       rotateMotor(FRONT_RIGHT_MOTOR, STOP);
       rotateMotor(BACK_LEFT_MOTOR, STOP);
