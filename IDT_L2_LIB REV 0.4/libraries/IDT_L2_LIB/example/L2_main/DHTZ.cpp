@@ -51,7 +51,7 @@ void DHTZ::DHTZAlarmCheck()
 
     if (t >= Temp_alarm_val)
     {
-        // buzzer_d.Alarm_Beep();
+        buzzer_d.Alarm_Beep();
         delay(100);
     }
 }
