@@ -87,5 +87,6 @@ void loop()
   ultra_main.ultraCheckDistance();
   ldr_main.LdrMeasure();
   ldr_main.LdrAlarmCheck();
+  dht_main.DHTZAlarmCheck();
   lcd_main.LcdDisplayDHT();
 }
