@@ -15,9 +15,9 @@ void DHTZ::DHTZInit()
 
 long DHTZ::DHTZReadTemp()
 {
-    long t = dht.readTemperature();
-    // Serial.print("Temp :");
-    // Serial.println(t);
+    t = dht.readTemperature();
+    Serial.print("Temp :");
+    Serial.println(t);
 
     if (isnan(t)) {
       Serial.println(F("Failed to read from DHT sensor!"));
@@ -29,7 +29,7 @@ long DHTZ::DHTZReadTemp()
 
 long DHTZ::DHTZReadHumid()
 {
-    long h = dht.readHumidity();
+    h = dht.readHumidity();
     // Serial.print("Humi :");
     // Serial.println(h);
 
@@ -48,10 +48,14 @@ void DHTZ::DHTZAdjustAlarm(int temp_alarm)
 
 void DHTZ::DHTZAlarmCheck()
 {
-
+    DHTZReadTemp();
     if (t >= Temp_alarm_val)
     {
+        Serial.println("Buzzer On");
         buzzer_d.Alarm_Beep();
-        delay(100);
+        delay(500);
+    }
+    else {
+        Serial.println("Buzzer Off");
     }
 }
